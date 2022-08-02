@@ -1,2 +1,3 @@
 # CSS-Animation
-CSS animation file
+CSS Animation
+## Design using HTML and CSS Only
