@@ -3,5 +3,5 @@
 ##### Design using HTML and CSS Only
 ##### Markup Language:
 
-HTML5
+HTML5,
 CSS3
