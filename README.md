@@ -2,7 +2,7 @@
 ##### Design using HTML and CSS Only
 ##### Markup Language:
 HTML5 </br>
-CSS3
-
+CSS3 </br></br>
+*Total 25 animations used</br></br>
 Author : Md. Munaim Khan </br>
 Email  : khanmail2599@gmail.com
