@@ -17,41 +17,17 @@ Initial Style Start
 
 :root{
     --bodybg: #000000;
-    --bodybgblue: rgb(1, 1, 16);
 }
 
 body{
     background: var(--bodybg);
     overflow: hidden;
     height: 100vh;
-    animation: bgchange 5s linear infinite;
 }
 
-
-@keyframes bgchange{
-    0%{
-        background: var(--bodybg);
-    }
-
-    25%{
-        background: var(--bodybg);
-    }
-
-    50%{
-        background: var(--bodybgblue);
-    }
-
-    75%{
-        background: var(--bodybgblue);
-    }
-
-    100%{
-        background: var(--bodybg);
-    }
-}
 
 /*-------------------------
-Section style start
+Section style Start
 --------------------------*/
 
 .mk_wrap{
@@ -60,7 +36,7 @@ Section style start
 
 .mk_wrap, .mk_text{
     overflow: hidden;
-    padding: 2em 0;
+    padding: 40px 0;
 }
 
 .mk_text{
@@ -68,43 +44,49 @@ Section style start
 }
 
 .mk_wrap .bubble{
-    height: 10px;
-    width: 10px;
+    height: .6em;
+    width: .6em;
     border-radius: 50%;
-    background: red;
+    position: relative;
     float: left;
-    margin: 0.5em;
-    animation: bubble 15s alternate infinite;
-    color: #ffffff;
+    margin: .5em;
     font-weight: 600;
     text-align: center;
-    padding-top: 4px;
-    text-transform: uppercase;
-    box-shadow: 0 0 20px red,
-                0 0 40px red,
-                0 0 60px red,
-                0 0 100px red;
-    transition: .4s ease all;
+    padding-top: .2em;
 }
 
-.mk_wrap .bubble:nth-child(even){
-    background: dodgerblue;
-    box-shadow: 0 0 20px blue,
-                0 0 40px blue,
-                0 0 60px blue,
-                0 0 100px blue;
+.mk_wrap .bubble::after{
+    content: '';
+    height: .4em;
+    width: .4em;
+    position: absolute;
 }
 
-.bubble:hover{
-    height: 100px;
-    width: 100px;
+.mk_wrap .bubble_color:nth-child(odd), 
+.mk_wrap .bubble::after{
+    background: #ff0000;
+    box-shadow: 0 0 20px #ff0000,
+                0 0 40px #ff0000,
+                0 0 60px #ff0000,
+                0 0 100px #ff0000;
+    animation: bubble_odd 15s alternate infinite;
 }
 
+.mk_wrap .bubble:nth-child(even), 
+.mk_wrap .bubble::after{
+    background: #0000ff;
+    box-shadow: 0 0 20px #0000ff,
+                0 0 40px #0000ff,
+                0 0 60px #0000ff,
+                0 0 100px #0000ff;
+    animation: bubble_even 15s alternate infinite;
+}
+
+
+/*-- H1 Style Start -------------------*/
 h1{
     text-transform: uppercase;
     outline: none;
-    -webkit-box-reflect: below 1px crimson;
-    line-height: 0.70em;
     position: relative;
     width: 100%;
     text-align: center;
@@ -112,7 +94,7 @@ h1{
     line-height: 1em;
     position: relative;
     top: 17%;
-    animation: jump 60s linear infinite;
+    animation: jump 55s linear infinite;
 }
 
 h1 p{
@@ -204,6 +186,8 @@ h1 span:nth-child(20){
     animation: span20 22s linear infinite;
 }
 
+
+/*-- H3 Style Start -------------------*/
 h3{
     text-transform: uppercase;
     width: fit-content;
@@ -211,8 +195,8 @@ h3{
     font-size: 40px;
     position: relative;
     z-index: 1;
-    color: rgb(30, 144, 255);
-    text-shadow: 0 0 20px rgb(0, 0, 255);
+    color: #1e90ff;
+    text-shadow: 0 0 20px #0000ff;
 }
 
 .float1{
@@ -230,6 +214,7 @@ h3{
 Keyframes style start
 --------------------------*/
 
+/*-- Keyframe for rotating text 1 -------------------*/
 @keyframes float1{
     0%{
         transform: scale(0);
@@ -241,7 +226,7 @@ Keyframes style start
     30%{
         transform: scale(1);
         opacity: 1;
-        color: rgb(30, 144, 255);
+        color: #1e90ff;
     }
 
     60%{
@@ -254,7 +239,7 @@ Keyframes style start
     90%{
         transform: scale(1);
         opacity: 1;
-        color: rgb(30, 144, 255);
+        color: #1e90ff;
     }
 
     100%{
@@ -265,11 +250,12 @@ Keyframes style start
     }
 }
 
+/*-- Keyframe for rotating text 2 -------------------*/
 @keyframes float2{
     0%{
         transform: scale(1);
         opacity: 1;
-        color: rgb(30, 144, 255);
+        color: #1e90ff;
     }
 
     30%{
@@ -282,7 +268,7 @@ Keyframes style start
     60%{
         transform: scale(1);
         opacity: 1;
-        color: rgb(30, 144, 255);
+        color: #1e90ff;
     }
 
     90%{
@@ -295,331 +281,334 @@ Keyframes style start
     100%{
         transform: scale(1);
         opacity: 1;
-        color: rgb(30, 144, 255);
+        color: #1e90ff;
     }
 }
 
+/*-- Keyframe for H1 text lighting effect Start -------------------*/
 @keyframes span1{
     0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%{
-        color: firebrick;
+        color: #b22222;
         text-shadow: none;
     }
 
     18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
         color: #ffffff;
-        text-shadow: 0 0 10px blue,
-                     0 0 20px blue,
-                     0 0 40px blue,
-                     0 0 80px blue,
-                     0 0 160px blue
+        text-shadow: 0 0 10px #0000ff,
+                     0 0 20px #0000ff,
+                     0 0 40px #0000ff,
+                     0 0 80px #0000ff,
+                     0 0 160px #0000ff;
     }
 }
 
 @keyframes span2{
     0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%{
-        color: rgb(48, 10, 240);
+        color: #300af0;
         text-shadow: none;
     }
 
     18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
         color: #ffffff;
-        text-shadow: 0 0 10px red,
-                     0 0 20px red,
-                     0 0 40px red,
-                     0 0 80px red,
-                     0 0 160px red
+        text-shadow: 0 0 10px #ff0000,
+                     0 0 20px #ff0000,
+                     0 0 40px #ff0000,
+                     0 0 80px #ff0000,
+                     0 0 160px #ff0000;
     }
 }
 
 @keyframes span3{
     0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%{
-        color: rgb(10, 240, 52);
+        color: #0af034;
         text-shadow: none;
     }
 
     18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
         color: #ffffff;
-        text-shadow: 0 0 10px rgb(232, 240, 10),
-                     0 0 20px rgb(232, 240, 10),
-                     0 0 40px rgb(232, 240, 10),
-                     0 0 80px rgb(232, 240, 10),
-                     0 0 160px rgb(232, 240, 10)
+        text-shadow: 0 0 10px #e8f00a,
+                     0 0 20px #e8f00a,
+                     0 0 40px #e8f00a,
+                     0 0 80px #e8f00a,
+                     0 0 160px #e8f00a;
     }
 }
 
 @keyframes span4{
     0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%{
-        color: rgb(232, 240, 10);
+        color: #e8f00a;
         text-shadow: none;
     }
 
     18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
         color: #ffffff;
-        text-shadow: 0 0 10px rgb(10, 240, 52),
-                     0 0 20px rgb(10, 240, 52),
-                     0 0 40px rgb(10, 240, 52),
-                     0 0 80px rgb(10, 240, 52),
-                     0 0 160px rgb(10, 240, 52)
+        text-shadow: 0 0 10px #0af034,
+                     0 0 20px #0af034,
+                     0 0 40px #0af034,
+                     0 0 80px #0af034,
+                     0 0 160px #0af034;
     }
 }
 
 @keyframes span5{
     0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%{
-        color: rgb(240, 106, 10);
+        color: #f06a0a;
         text-shadow: none;
     }
 
     18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
         color: #ffffff;
-        text-shadow: 0 0 10px rgb(10, 167, 240),
-                     0 0 20px rgb(10, 167, 240),
-                     0 0 40px rgb(10, 167, 240),
-                     0 0 80px rgb(10, 167, 240),
-                     0 0 160px rgb(10, 167, 240)
+        text-shadow: 0 0 10px #0aa7f0,
+                     0 0 20px #0aa7f0,
+                     0 0 40px #0aa7f0,
+                     0 0 80px #0aa7f0,
+                     0 0 160px #0aa7f0;
     }
 }
 
 @keyframes span6{
     0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%{
-        color: rgb(10, 167, 240);
+        color: #0aa7f0;
         text-shadow: none;
     }
 
     18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
         color: #ffffff;
-        text-shadow: 0 0 10px rgb(240, 106, 10),
-                     0 0 20px rgb(240, 106, 10),
-                     0 0 40px rgb(240, 106, 10),
-                     0 0 80px rgb(240, 106, 10),
-                     0 0 160px rgb(240, 106, 10)
+        text-shadow: 0 0 10px #f06a0a,
+                     0 0 20px #f06a0a,
+                     0 0 40px #f06a0a,
+                     0 0 80px #f06a0a,
+                     0 0 160px #f06a0a;
     }
 }
 
 @keyframes span7{
     0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%{
-        color: rgb(240, 10, 190);
+        color: #f00abe;
         text-shadow: none;
     }
 
     18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
         color: #ffffff;
-        text-shadow: 0 0 10px rgb(37, 240, 10),
-                     0 0 20px rgb(37, 240, 10),
-                     0 0 40px rgb(37, 240, 10),
-                     0 0 80px rgb(37, 240, 10),
-                     0 0 160px rgb(37, 240, 10)
+        text-shadow: 0 0 10px #25f00a,
+                     0 0 20px #25f00a,
+                     0 0 40px #25f00a,
+                     0 0 80px #25f00a,
+                     0 0 160px #25f00a;
     }
 }
 
 @keyframes span8{
     0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%{
-        color: rgb(37, 240, 10);
+        color: #25f00a;
         text-shadow: none;
     }
 
     18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
         color: #ffffff;
-        text-shadow: 0 0 10px rgb(240, 10, 190),
-                     0 0 20px rgb(240, 10, 190),
-                     0 0 40px rgb(240, 10, 190),
-                     0 0 80px rgb(240, 10, 190),
-                     0 0 160px rgb(240, 10, 190)
+        text-shadow: 0 0 10px #f00abe,
+                     0 0 20px #f00abe,
+                     0 0 40px #f00abe,
+                     0 0 80px #f00abe,
+                     0 0 160px #f00abe;
     }
 }
 
 @keyframes span9{
     0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%{
-        color: rgb(10, 232, 240);
+        color: #0ae8f0;
         text-shadow: none;
     }
 
     18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
         color: #ffffff;
-        text-shadow: 0 0 10px rgb(240, 10, 10),
-                     0 0 20px rgb(240, 10, 10),
-                     0 0 40px rgb(240, 10, 10),
-                     0 0 80px rgb(240, 10, 10),
-                     0 0 160px rgb(240, 10, 10)
+        text-shadow: 0 0 10px #f00a0a,
+                     0 0 20px #f00a0a,
+                     0 0 40px #f00a0a,
+                     0 0 80px #f00a0a,
+                     0 0 160px #f00a0a;
     }
 }
 
 @keyframes span10{
     0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%{
-        color: rgb(240, 10, 10);
+        color: #f00a0a;
         text-shadow: none;
     }
 
     18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
         color: #ffffff;
-        text-shadow: 0 0 10px rgb(10, 232, 240),
-                     0 0 20px rgb(10, 232, 240),
-                     0 0 40px rgb(10, 232, 240),
-                     0 0 80px rgb(10, 232, 240),
-                     0 0 160px rgb(10, 232, 240)
+        text-shadow: 0 0 10px #0ae8f0,
+                     0 0 20px #0ae8f0,
+                     0 0 40px #0ae8f0,
+                     0 0 80px #0ae8f0,
+                     0 0 160px #0ae8f0;
     }
 }
 
 @keyframes span11{
     0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%{
-        color: rgb(58, 9, 80);
+        color: #3a0950;
         text-shadow: none;
     }
 
     18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
         color: #ffffff;
-        text-shadow: 0 0 10px rgb(13, 11, 76),
-                     0 0 20px rgb(13, 11, 76),
-                     0 0 40px rgb(13, 11, 76),
-                     0 0 80px rgb(13, 11, 76),
-                     0 0 160px rgb(13, 11, 76)
+        text-shadow: 0 0 10px #0d0b4c,
+                     0 0 20px #0d0b4c,
+                     0 0 40px #0d0b4c,
+                     0 0 80px #0d0b4c,
+                     0 0 160px #0d0b4c;
     }
 }
 
 @keyframes span12{
     0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%{
-        color: rgb(13, 11, 76);
+        color: #0d0b4c;
         text-shadow: none;
     }
 
     18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
         color: #ffffff;
-        text-shadow: 0 0 10px rgb(58, 9, 80),
-                     0 0 20px rgb(58, 9, 80),
-                     0 0 40px rgb(58, 9, 80),
-                     0 0 80px rgb(58, 9, 80),
-                     0 0 160px rgb(58, 9, 80)
+        text-shadow: 0 0 10px #3a0950,
+                     0 0 20px #3a0950,
+                     0 0 40px #3a0950,
+                     0 0 80px #3a0950,
+                     0 0 160px #3a0950;
     }
 }
 
 
 @keyframes span13{
     0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%{
-        color: firebrick;
+        color: #b22222;
         text-shadow: none;
     }
 
     18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
         color: #ffffff;
-        text-shadow: 0 0 10px blue,
-                     0 0 20px blue,
-                     0 0 40px blue,
-                     0 0 80px blue,
-                     0 0 160px blue
+        text-shadow: 0 0 10px #0000ff,
+                     0 0 20px #0000ff,
+                     0 0 40px #0000ff,
+                     0 0 80px #0000ff,
+                     0 0 160px #0000ff;
     }
 }
 
 @keyframes span14{
     0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%{
-        color: rgb(48, 10, 240);
+        color: #300af0;
         text-shadow: none;
     }
 
     18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
         color: #ffffff;
-        text-shadow: 0 0 10px red,
-                     0 0 20px red,
-                     0 0 40px red,
-                     0 0 80px red,
-                     0 0 160px red
+        text-shadow: 0 0 10px #ff0000,
+                     0 0 20px #ff0000,
+                     0 0 40px #ff0000,
+                     0 0 80px #ff0000,
+                     0 0 160px #ff0000;
     }
 }
 
 @keyframes span15{
     0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%{
-        color: rgb(10, 240, 52);
+        color: #0af034;
         text-shadow: none;
     }
 
     18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
         color: #ffffff;
-        text-shadow: 0 0 10px rgb(232, 240, 10),
-                     0 0 20px rgb(232, 240, 10),
-                     0 0 40px rgb(232, 240, 10),
-                     0 0 80px rgb(232, 240, 10),
-                     0 0 160px rgb(232, 240, 10)
+        text-shadow: 0 0 10px #e8f00a,
+                     0 0 20px #e8f00a,
+                     0 0 40px #e8f00a,
+                     0 0 80px #e8f00a,
+                     0 0 160px #e8f00a;
     }
 }
 
 @keyframes span16{
     0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%{
-        color: rgb(232, 240, 10);
+        color: #e8f00a;
         text-shadow: none;
     }
 
     18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
         color: #ffffff;
-        text-shadow: 0 0 10px rgb(10, 240, 52),
-                     0 0 20px rgb(10, 240, 52),
-                     0 0 40px rgb(10, 240, 52),
-                     0 0 80px rgb(10, 240, 52),
-                     0 0 160px rgb(10, 240, 52)
+        text-shadow: 0 0 10px #0af034,
+                     0 0 20px #0af034,
+                     0 0 40px #0af034,
+                     0 0 80px #0af034,
+                     0 0 160px #0af034;
     }
 }
 
 @keyframes span17{
     0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%{
-        color: rgb(240, 106, 10);
+        color: #f06a0a;
         text-shadow: none;
     }
 
     18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
         color: #ffffff;
-        text-shadow: 0 0 10px rgb(10, 167, 240),
-                     0 0 20px rgb(10, 167, 240),
-                     0 0 40px rgb(10, 167, 240),
-                     0 0 80px rgb(10, 167, 240),
-                     0 0 160px rgb(10, 167, 240)
+        text-shadow: 0 0 10px #0aa7f0,
+                     0 0 20px #0aa7f0,
+                     0 0 40px #0aa7f0,
+                     0 0 80px #0aa7f0,
+                     0 0 160px #0aa7f0;
     }
 }
 
 @keyframes span18{
     0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%{
-        color: rgb(10, 167, 240);
+        color: #0aa7f0;
         text-shadow: none;
     }
 
     18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
         color: #ffffff;
-        text-shadow: 0 0 10px rgb(240, 106, 10),
-                     0 0 20px rgb(240, 106, 10),
-                     0 0 40px rgb(240, 106, 10),
-                     0 0 80px rgb(240, 106, 10),
-                     0 0 160px rgb(240, 106, 10)
+        text-shadow: 0 0 10px #f06a0a,
+                     0 0 20px #f06a0a,
+                     0 0 40px #f06a0a,
+                     0 0 80px #f06a0a,
+                     0 0 160px #f06a0a;
     }
 }
 
 @keyframes span19{
     0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%{
-        color: rgb(240, 10, 190);
+        color: #f00abe;
         text-shadow: none;
     }
 
     18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
         color: #ffffff;
-        text-shadow: 0 0 10px rgb(37, 240, 10),
-                     0 0 20px rgb(37, 240, 10),
-                     0 0 40px rgb(37, 240, 10),
-                     0 0 80px rgb(37, 240, 10),
-                     0 0 160px rgb(37, 240, 10)
+        text-shadow: 0 0 10px #25f00a,
+                     0 0 20px #25f00a,
+                     0 0 40px #25f00a,
+                     0 0 80px #25f00a,
+                     0 0 160px #25f00a;
     }
 }
 
 @keyframes span20{
     0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%{
-        color: rgb(37, 240, 10);
+        color: #25f00a;
         text-shadow: none;
     }
 
     18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
         color: #ffffff;
-        text-shadow: 0 0 10px rgb(240, 10, 190),
-                     0 0 20px rgb(240, 10, 190),
-                     0 0 40px rgb(240, 10, 190),
-                     0 0 80px rgb(240, 10, 190),
-                     0 0 160px rgb(240, 10, 190);
+        text-shadow: 0 0 10px #f00abe,
+                     0 0 20px #f00abe,
+                     0 0 40px #f00abe,
+                     0 0 80px #f00abe,
+                     0 0 160px #f00abe;
     }
 }
+/*-- Keyframe for H1 text lighting effect End -------------------*/
 
+/*-- Keyframe for H1 text jumping -------------------*/
 @keyframes jump{
     0%, 10%, 30%, 50%, 70%, 90%{
         top: -10px;
@@ -630,7 +619,8 @@ Keyframes style start
     }
 }
 
-@keyframes bubble{
+/*-- Keyframe for bubble animation in the odd position -------------------*/
+@keyframes bubble_odd{
     0%{
         transform: translateY(-100vh) scale(3);
     }
@@ -641,6 +631,70 @@ Keyframes style start
 
     100%{
         transform: translateY(100vh) scale(1);
+    }
+
+
+    30%{
+        background: #0000ff;
+        box-shadow: 0 0 20px #0000ff,
+                    0 0 40px #0000ff,
+                    0 0 60px #0000ff,
+                    0 0 100px #0000ff;
+    }
+
+    60%{
+        background: #f00a0a;
+        box-shadow: 0 0 20px #f00a0a,
+                    0 0 40px #f00a0a,
+                    0 0 60px #f00a0a,
+                    0 0 100px #f00a0a;
+    }
+
+    90%{
+        background: #00ff00;
+        box-shadow: 0 0 20px #00ff00,
+                    0 0 40px #00ff00,
+                    0 0 60px #00ff00,
+                    0 0 100px #00ff00;
+    }
+}
+
+/*-- Keyframe for bubble animation in the even position -------------------*/
+@keyframes bubble_even{
+    0%{
+        transform: translateY(-100vh) scale(3);
+    }
+
+    50%{
+        transform: rotate(180deg);
+    }
+
+    100%{
+        transform: translateY(100vh) scale(1);
+    }
+
+    30%{
+        background: #f00a0a;
+        box-shadow: 0 0 20px #f00a0a,
+                    0 0 40px #f00a0a,
+                    0 0 60px #f00a0a,
+                    0 0 100px #f00a0a;
+    }
+
+    60%{
+        background: #00ff00;
+        box-shadow: 0 0 20px #00ff00,
+                    0 0 40px #00ff00,
+                    0 0 60px #00ff00,
+                    0 0 100px #00ff00;
+    }
+
+    90%{
+        background: #0000ff;
+        box-shadow: 0 0 20px #0000ff,
+                    0 0 40px #0000ff,
+                    0 0 60px #0000ff,
+                    0 0 100px #0000ff;
     }
 }
 
@@ -653,7 +707,7 @@ Responsive Design
 /*---------------- For Small Screen ----------------*/
 @media only screen and (max-width: 700px){
     .mk_text{
-        margin-top: -24em;
+        margin-top: -40em;
     }
 
     h1{
