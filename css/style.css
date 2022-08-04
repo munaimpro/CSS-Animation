@@ -97,7 +97,7 @@ h1{
     animation: jump 55s linear infinite;
 }
 
-h1 p{
+h1 small{
     font-size: 0.5em;
 }
 
