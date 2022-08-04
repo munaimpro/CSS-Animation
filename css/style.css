@@ -9,10 +9,10 @@ Initial Style Start
 --------------------------*/
 
 *{
-    padding: 0;
-    margin: 0;
     box-sizing: border-box;
     font-family: Arial;
+    margin: 0;
+    padding: 0;
 }
 
 :root{
@@ -21,8 +21,8 @@ Initial Style Start
 
 body{
     background: var(--bodybg);
-    overflow: hidden;
     height: 100vh;
+    overflow: hidden;
 }
 
 
@@ -44,57 +44,55 @@ Section style Start
 }
 
 .mk_wrap .bubble{
-    height: .6em;
-    width: .6em;
     border-radius: 50%;
-    position: relative;
     float: left;
-    margin: .5em;
     font-weight: 600;
-    text-align: center;
+    height: .6em;
+    margin: .5em;
     padding-top: .2em;
+    position: relative;
+    text-align: center;
+    width: .6em;
 }
 
 .mk_wrap .bubble::after{
     content: '';
     height: .4em;
-    width: .4em;
     position: absolute;
+    width: .4em;
 }
 
 .mk_wrap .bubble_color:nth-child(odd), 
 .mk_wrap .bubble::after{
+    animation: bubble_odd 15s alternate infinite;
     background: #ff0000;
     box-shadow: 0 0 20px #ff0000,
                 0 0 40px #ff0000,
                 0 0 60px #ff0000,
                 0 0 100px #ff0000;
-    animation: bubble_odd 15s alternate infinite;
 }
 
 .mk_wrap .bubble:nth-child(even), 
 .mk_wrap .bubble::after{
+    animation: bubble_even 15s alternate infinite;
     background: #0000ff;
     box-shadow: 0 0 20px #0000ff,
                 0 0 40px #0000ff,
                 0 0 60px #0000ff,
                 0 0 100px #0000ff;
-    animation: bubble_even 15s alternate infinite;
 }
 
 
 /*-- H1 Style Start -------------------*/
 h1{
-    text-transform: uppercase;
-    outline: none;
-    position: relative;
-    width: 100%;
-    text-align: center;
+    animation: jump 55s linear infinite;
     font-size: 6em;
     line-height: 1em;
     position: relative;
+    text-align: center;
+    text-transform: uppercase;
     top: 17%;
-    animation: jump 55s linear infinite;
+    width: 100%;
 }
 
 h1 small{
@@ -182,21 +180,21 @@ h1 span:nth-child(19){
 }
 
 h1 span:nth-child(20){
-    position: relative;
     animation: span20 22s linear infinite;
+    position: relative;
 }
 
 
 /*-- H3 Style Start -------------------*/
 h3{
+    color: #1e90ff;
+    font-size: 40px;
+    margin: 1em auto;
+    position: relative;
+    text-shadow: 0 0 20px #0000ff;
     text-transform: uppercase;
     width: fit-content;
-    margin: 1em auto;
-    font-size: 40px;
-    position: relative;
     z-index: 1;
-    color: #1e90ff;
-    text-shadow: 0 0 20px #0000ff;
 }
 
 .float1{
@@ -204,9 +202,9 @@ h3{
 }
 
 .float2{
+    animation: float2 22s linear infinite;
     position: relative;
     top: -2.1em;
-    animation: float2 22s linear infinite;
 }
 
 
@@ -217,71 +215,71 @@ Keyframes style start
 /*-- Keyframe for rotating text 1 -------------------*/
 @keyframes float1{
     0%{
-        transform: scale(0);
-        opacity: 0;
-        transform: rotateY(160deg);
         color: #ffffff;
+        opacity: 0;
+        transform: scale(0);
+        transform: rotateY(160deg);
     }
 
     30%{
-        transform: scale(1);
-        opacity: 1;
         color: #1e90ff;
+        opacity: 1;
+        transform: scale(1);
     }
 
     60%{
-        transform: scale(0);
+        color: #ffffff;
         opacity: 0;
         transform: rotateY(160deg);
-        color: #ffffff;
+        transform: scale(0);
     }
 
     90%{
-        transform: scale(1);
-        opacity: 1;
         color: #1e90ff;
+        opacity: 1;
+        transform: scale(1);
     }
 
     100%{
-        transform: scale(0);
+        color: #ffffff;
         opacity: 0;
         transform: rotateY(160deg);
-        color: #ffffff;
+        transform: scale(0);
     }
 }
 
 /*-- Keyframe for rotating text 2 -------------------*/
 @keyframes float2{
     0%{
-        transform: scale(1);
-        opacity: 1;
         color: #1e90ff;
+        opacity: 1;
+        transform: scale(1);
     }
 
     30%{
-        transform: scale(0);
+        color: #ffffff;
         opacity: 0;
         transform: rotateY(-160deg);
-        color: #ffffff;
+        transform: scale(0);
     }
 
     60%{
-        transform: scale(1);
-        opacity: 1;
         color: #1e90ff;
+        opacity: 1;
+        transform: scale(1);
     }
 
     90%{
-        transform: scale(0);
+        color: #ffffff;
         opacity: 0;
         transform: rotateY(-160deg);
-        color: #ffffff;
+        transform: scale(0);
     }
 
     100%{
-        transform: scale(1);
-        opacity: 1;
         color: #1e90ff;
+        opacity: 1;
+        transform: scale(1);
     }
 }
 
@@ -715,8 +713,8 @@ Responsive Design
     }
 
     h3{
-        margin: .5em auto;
         font-size: 20px;
+        margin: .5em auto;
     }
 
     .float2{
