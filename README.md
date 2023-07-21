@@ -5,7 +5,7 @@ HTML5 </br>
 CSS3 </br></br>
 *Total 25 animations used</br>
 *W3C Validated</br></br>
-Author : Md. Munaim Khan </br>
-Email  : khanmail2599@gmail.com </br>
-LinkedIn: munaimpro </br>
-Facebook Page: Web Coder Munaim
+Author : Munaim Khan </br>
+LinkedIn: <a href="https://www.linkedin.com/in/munaimpro/" target="_blank">munaimpro</a> </br>
+Facebook: <a href="https://facebook.com/webcodermunaim" target="_blank">Web Coder Munaim</a> </br>
+Twitter: <a href="https://twitter.com/munaimpro" target="_blank">munaimpro</a>
